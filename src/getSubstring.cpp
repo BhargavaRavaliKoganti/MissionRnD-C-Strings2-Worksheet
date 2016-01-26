@@ -1,4 +1,4 @@
-/*
+/*	
 OVERVIEW: Given a string, Return the substring of the main string from i index to j index
 Indexes start from 0,ith letter and jth letter are included
 E.g.: Input: "get_sub_string("abcdefgh",2,5) , Output: "cdef"
@@ -18,6 +18,14 @@ original String
 #include <stdlib.h>
 
 char * get_sub_string(char *str, int i, int j){
-
-    return NULL;
+	if (str == NULL || i > j)
+		return NULL;
+	char * subString = (char*)malloc(sizeof(char)*(j - i + 1));
+	int index = 0;
+	while (i <= j){
+		subString[index] = *(str + i);
+		index++;
+		i++;
+	}
+	return subString;
 }
